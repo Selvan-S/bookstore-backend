@@ -5,6 +5,8 @@ import { Book } from "./models/bookModel.js";
 import dotenv from "dotenv";
 import cors from "cors"
 import booksRoute from "./routes/booksRoute.js";
+import { Reviews } from "./models/reviewsModel.js";
+import reviewRoute from "./routes/reviewRoute.js";
 dotenv.config();
 
 const port = process.env.PORT;
@@ -36,3 +38,4 @@ app.listen(port, () => {
 });
 
 app.use("/books", booksRoute);
+app.use("/review", reviewRoute);
