@@ -29,10 +29,6 @@ app.use(cors({ origin: "*" }));
 //   })
 // );
 
-app.get("/", (request, response) => {
-  console.log(request);
-  return response.status(234).send("Welcome to MERN Stack Tutorial");
-});
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
