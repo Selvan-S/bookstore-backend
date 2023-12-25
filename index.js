@@ -35,3 +35,5 @@ app.listen(port, () => {
 
 app.use("/books", booksRoute);
 app.use("/review", reviewRoute);
+
+export default app;
