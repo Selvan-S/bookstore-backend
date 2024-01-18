@@ -1,12 +1,9 @@
-import express, { request, response } from "express";
-import mongoose from "mongoose";
-import { connectDB } from "./db.js";
-import { Book } from "./models/bookModel.js";
+import cors from "cors";
 import dotenv from "dotenv";
-import cors from "cors"
-import booksRoute from "./routes/booksRoute.js";
-import { Reviews } from "./models/reviewsModel.js";
-import reviewRoute from "./routes/reviewRoute.js";
+import express from "express";
+import { connectDB } from "../db.js";
+import booksRoute from "../routes/booksRoute.js";
+import reviewRoute from "../routes/reviewRoute.js";
 dotenv.config();
 
 const port = process.env.PORT;
@@ -35,3 +32,5 @@ app.listen(port, () => {
 
 app.use("/books", booksRoute);
 app.use("/review", reviewRoute);
+
+export default app;
