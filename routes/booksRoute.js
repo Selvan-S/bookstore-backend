@@ -89,7 +89,8 @@ router.get("/", async (request, response) => {
     let bookList;
     let totalNumBooks;
     try {
-      bookList = await await Book.find(query)
+      bookList = await Book.find(query)
+        .sort({ updatedAt: -1 })
         .limit(booksPerPage)
         .skip(booksPerPage * page)
         .exec();
