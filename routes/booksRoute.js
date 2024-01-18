@@ -10,6 +10,8 @@ router.post("/", async (request, response) => {
     if (
       !request.body.title ||
       !request.body.author ||
+      !request.body.userId ||
+      !request.body.userName ||
       !request.body.publishYear
     ) {
       return response.status(400).send({
@@ -21,6 +23,8 @@ router.post("/", async (request, response) => {
       author: request.body.author,
       publishYear: request.body.publishYear,
       about: request.body.about,
+      userId: request.body.userId,
+      userName: request.body.userName,
     };
     const book = await Book.create(newBook);
     return response.status(201).send(book);
@@ -128,6 +132,8 @@ router.put("/:id", async (request, response) => {
     if (
       !request.body.title ||
       !request.body.author ||
+      !request.body.userId ||
+      !request.body.userName ||
       !request.body.publishYear
     ) {
       return response.status(400).send({
@@ -139,6 +145,8 @@ router.put("/:id", async (request, response) => {
       author: request.body.author,
       publishYear: request.body.publishYear,
       about: request.body.about,
+      userId: request.body.userId,
+      userName: request.body.userName,
     };
     const { id } = request.params;
     const result = await Book.findByIdAndUpdate(id, UpdateBook);
