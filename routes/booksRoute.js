@@ -54,7 +54,7 @@ router.get("/", async (request, response) => {
   try {
     const booksPerPage = request.query.booksPerPage
       ? parseInt(request.query.booksPerPage, 10)
-      : 10;
+      : 6;
     const page = request.query.page ? parseInt(request.query.page, 10) : 0;
     let filters = {};
     if (request.query.title) {
